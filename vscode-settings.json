@@ -1,0 +1,33 @@
+{
+  "window.zoomLevel": 2,
+  "editor.minimap.enabled": false,
+  "workbench.sideBar.location": "right",
+  "workbench.activityBar.visible": false,
+  "workbench.iconTheme": "vscode-icons",
+  "editor.fontFamily": "Menlo, Monaco, 'Courier New',monospace",
+  "workbench.statusBar.visible": true,
+  "breadcrumbs.enabled": true,
+  "workbench.editor.showTabs": true,
+  "editor.renderWhitespace": "all",
+  "terminal.integrated.shell.osx": "/bin/zsh",
+  "terminal.external.osxExec": "iTerm.app",
+  "editor.tabSize": 2,
+  "editor.formatOnPaste": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "files.exclude": {
+    "**/.git": false
+  },
+  "html.format.indentInnerHtml": true,
+  "editor.formatOnSave": true,
+  "javascript.preferences.quoteStyle": "single",
+  "diffEditor.renderSideBySide": false,
+  "prettier.singleQuote": true,
+  "editor.foldingHighlight": false,
+  "cSpell.userWords": ["catan"],
+  "cSpell.enableFiletypes": ["c"],
+  "C_Cpp.updateChannel": "Insiders",
+  "editor.tokenColorCustomizations": null,
+  "notebook.kernelProviderAssociations": []
+}
