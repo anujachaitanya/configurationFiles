@@ -54,10 +54,3 @@ set nofoldenable
 set foldlevel=2
 
 
-
-" plugins
-call plug#begin('~/.vim/plugged')
-Plug 'Yggdroot/indentLine'
-call plug#end()
-
-colorscheme challenger_deep "my theme
