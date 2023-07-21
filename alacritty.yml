@@ -1,0 +1,49 @@
+shell:
+  program: /bin/zsh
+  args:
+    - -l
+    - -c
+    - "tmux attach || tmux new -s default"
+window:
+  startup_mode: Fullscreen
+
+font:
+  normal:
+    family: "Fira Code"
+    style: Regular
+  bold:
+    family: "Fira Code"
+    style: Bold
+  italic:
+    family: "Fira Code"
+    style: Italic
+  bold_italic:
+    family: "Fira Code"
+    style: Bold Italic
+  size: 15.0
+
+selection:
+  # When set to `true`, selected text will be copied to the primary clipboard.
+  save_to_clipboard: true
+
+key_bindings:
+  - { key: Return, mods: Command, chars: "\x02z" }
+  - { key: LBracket, mods: Command, chars: "\x02;" }
+  - { key: RBracket, mods: Command, chars: "\x02o" }
+  - { key: T, mods: Command, chars: "\x02c" }
+  - { key: D, mods: Command|Shift, chars: "\x02\"" }
+  - { key: D, mods: Command, chars: "\x02%" }
+  - { key: N, mods: Command, chars: "\x02n" }
+  - { key: Key0, mods: Command, chars: "\x020" }
+  - { key: Key1, mods: Command, chars: "\x021" }
+  - { key: Key2, mods: Command, chars: "\x022" }
+  - { key: Key3, mods: Command, chars: "\x023" }
+  - { key: Key4, mods: Command, chars: "\x024" }
+  - { key: Key5, mods: Command, chars: "\x025" }
+  - { key: Key6, mods: Command, chars: "\x026" }
+  - { key: Key7, mods: Command, chars: "\x027" }
+  - { key: Key8, mods: Command, chars: "\x028" }
+  - { key: Key9, mods: Command, chars: "\x029" }
+  - { key: Comma, mods: Command,    chars: "\x02," }  
+  - { key: S,mods: Command, chars: "\x02s" }
+  - { key: W, mods: Command, chars: "\x02&" }
