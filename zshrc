@@ -126,3 +126,5 @@ export PATH="/Users/anuja.chaitanya/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)export PATH="/usr/local/opt/openjdk/bin:$PATH"
 export PATH="/usr/local/opt/openjdk@17/bin:$PATH"
  [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+
+export VFS_ROOT=/Users/anuja.chaitanya/yaska-data-space 
