@@ -16,7 +16,7 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/anuja.chaitanya/.oh-my-zsh"
+export ZSH="/Users/anujachaitanya/.oh-my-zsh"
 PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:~/bin:~/Library/Application\ Support/Coursier/bin;
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -81,7 +81,7 @@ PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:~/bin:~/Library/Application\ S
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git z zsh-autosuggestions zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 # User configuration
 
@@ -122,9 +122,8 @@ export CHROME_PATH=/Applications/Brave\ Browser.app/Contents/MacOS/Brave\ Browse
   [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-export PATH="/Users/anuja.chaitanya/.rd/bin:$PATH"
+export PATH="/Users/anujachaitanya/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)export PATH="/usr/local/opt/openjdk/bin:$PATH"
 export PATH="/usr/local/opt/openjdk@17/bin:$PATH"
- [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
-export VFS_ROOT=/Users/anuja.chaitanya/yaska-data-space 
+export VFS_ROOT=/Users/anujachaitanya/yaska-data-space 
