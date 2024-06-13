@@ -127,3 +127,9 @@ export PATH="/Users/anujachaitanya/.rd/bin:$PATH"
 export PATH="/usr/local/opt/openjdk@17/bin:$PATH"
 
 export VFS_ROOT=/Users/anujachaitanya/yaska-data-space 
+
+export GOPATH="$HOME/go"
+export GO111MODULE=auto
+export  GOROOT=/usr/local/Cellar/go/1.22.1/libexec
+export PATH=$PATH:$(go env GOPATH)/bin
+
