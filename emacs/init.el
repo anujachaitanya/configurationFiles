@@ -85,38 +85,42 @@ _i_ reset cache     _K_ kill all        _D_ root            _R_ regexp replace
 
 (require 'yaml-mode)
 (add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
-;; git 
-;; (global-git-gutter+-mode t)
-;; (setq git-gutter+-disabled-modes '(asm-mode image-mode))
-;; (set-face-background 'git-gutter+-modified "purple") ;; background color
-;; (set-face-foreground 'git-gutter+-added "green")
-;; (set-face-foreground 'git-gutter+-deleted "red")
+
+;; git
+
+(global-git-gutter+-mode t)
+(setq git-gutter+-disabled-modes '(asm-mode image-mode))
+(set-face-background 'git-gutter+-modified "purple") ;; background color
+(set-face-foreground 'git-gutter+-added "green")
+(set-face-foreground 'git-gutter+-deleted "red")
 
 
-;; (defhydra hydra-magit (:color blue)
-;;   "
-;;   ^
-;;   ^Git  ^             ^Do^
-;;   ^─────^─────────────^──^─────────────
-;;   _n_ Next Hunk       _p_ Previous Hunk
-;;   _w_ Show Hunk       _s_ Stage Hunk
-;;   _q_ Quit            _b_ Blame
-;;   _c_ Clone           _S_ Status
-;;   _i_ Init            _l_ Git Log for file
-;;   "
-;;   ("q" nil)
-;;   ("n" git-gutter+-next-hunk)
-;;   ("p" git-gutter+-previous-hunk)
-;;   ("w" git-gutter+-show-hunk)
-;;   ("s" git-gutter+-stage-hunks)
-;;   ("b" magit-blame)
-;;   ("c" magit-clone)
-;;   ("i" magit-init)
-;;   ("S" magit-status)
-;;   ("l" magit-log-buffer-file))
+(defhydra hydra-magit (:color blue)
+  "
+  ^
+  ^Git  ^             ^Do^
+  ^─────^─────────────^──^─────────────
+  _n_ Next Hunk       _p_ Previous Hunk
+  _w_ Show Hunk       _s_ Stage Hunk
+  _q_ Quit            _b_ Blame
+  _c_ Clone           _S_ Status
+  _i_ Init            _l_ Git Log for file
+  "
+  ("q" nil)
+  ("n" git-gutter+-next-hunk)
+  ("p" git-gutter+-previous-hunk)
+  ("w" git-gutter+-show-hunk)
+  ("s" git-gutter+-stage-hunks)
+  ("b" magit-blame)
+  ("c" magit-clone)
+  ("i" magit-init)
+  ("S" magit-status)
+  ("l" magit-log-buffer-file))
 
-;; (global-set-key (kbd "C-c g") 'magit-status)
-;; (global-set-key (kbd "C-c m") 'hydra-magit/body)
+(global-set-key (kbd "C-c g") 'magit-status)
+(global-set-key (kbd "C-c m") 'hydra-magit/body)
+
+;; End for git
 
 (message "Hey there!")
 
@@ -126,7 +130,7 @@ _i_ reset cache     _K_ kill all        _D_ root            _R_ regexp replace
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(yaml-mode with-editor transient simple-httpd org-bullets markdown-mode hydra helm-swoop helm-projectile go-complete darktooth-theme company auto-complete)))
+   '(magit git-gutter+ yaml-mode with-editor transient simple-httpd org-bullets markdown-mode hydra helm-swoop helm-projectile go-complete darktooth-theme company auto-complete)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
