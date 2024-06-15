@@ -1,9 +1,10 @@
 (require 'package)
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+(add-to-list 'package-archives '(("melpa" . "https://melpa.org/packages/"), ("org" . "https://orgmode.org/elpa")) t)
 ;; Comment/uncomment this line to enable MELPA Stable if desired.  See `package-archive-priorities`
 ;; and `package-pinned-packages`. Most users will not need or want to do this.
 ;;(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 (package-initialize)
+
 
 (setq make-backup-files nil)
 
@@ -17,6 +18,7 @@
 (require 'helm-swoop)
 (require 'auto-complete)
 (require 'hydra)
+(require 'org)
 
 ;; helm key bindings
 (global-set-key (kbd "C-x C-f") #'helm-find-files)
@@ -33,6 +35,7 @@
 
 (setq display-line-numbers 'relative)
 (scroll-bar-mode -1)
+
 ;; alias for yes and no
 (defalias 'yes-or-no-p 'y-or-n-p)
 (setq echo-keystrokes 0.1)
@@ -75,6 +78,8 @@ _i_ reset cache     _K_ kill all        _D_ root            _R_ regexp replace
 
 (global-set-key (kbd "C-c p") 'hydra-projectile/body)
 
+;; Modes
+
 (add-to-list 'auto-mode-alist '("\\.md$" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.mdown$" . markdown-mode))
 
@@ -83,7 +88,6 @@ _i_ reset cache     _K_ kill all        _D_ root            _R_ regexp replace
 
 (add-hook 'org-mode-hook 'org-bullets-mode)
 
-(require 'yaml-mode)
 (add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
 
 ;; git
@@ -123,17 +127,3 @@ _i_ reset cache     _K_ kill all        _D_ root            _R_ regexp replace
 ;; End for git
 
 (message "Hey there!")
-
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   '(magit git-gutter+ yaml-mode with-editor transient simple-httpd org-bullets markdown-mode hydra helm-swoop helm-projectile go-complete darktooth-theme company auto-complete)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
