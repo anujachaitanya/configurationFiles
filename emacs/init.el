@@ -11,7 +11,7 @@
 
 (setq make-backup-files nil)
 
-(load-theme 'darktooth t)
+(load-theme 'sanityinc-tomorrow-bright t)
 (set-background-color '"gray13")
 (set-face-attribute 'default nil :height 140)
 
@@ -199,3 +199,6 @@ _i_ reset cache     _K_ kill all        _D_ root            _R_ regexp replace
   :hook ((java-mode . lsp-deferred)
 	 (java-mode . company-mode))
   :config (add-hook 'java-mode-hook 'lsp))
+
+(message "Hey there!")
+
