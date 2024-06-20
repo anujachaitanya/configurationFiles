@@ -8,10 +8,21 @@
 (unless (package-installed-p 'use-package)
   (package-install 'use-package))
 (require 'use-package)
+(use-package helm-swoop :ensure t)
+(use-package auto-complete :ensure t)
+(use-package hydra :ensure t)
 
 (setq make-backup-files nil)
 
+;;;; Global setup
+
+(setq-default display-line-numbers-width 2
+              display-line-numbers-widen t
+              tab-width 2
+              indent-tabs-mode nil)
+
 (load-theme 'sanityinc-tomorrow-bright t)
+;; (load-theme 'darktooth t)
 (set-background-color '"gray13")
 (set-face-attribute 'default nil :height 140)
 
@@ -22,31 +33,32 @@
 (global-set-key (kbd "s-'") #'other-window)
 (global-set-key (kbd "s-<") #'prev-window)
 
-
-(use-package helm-swoop :ensure t)
-(use-package auto-complete :ensure t)
-(use-package hydra :ensure t)
-
-
 (when (string= system-type "darwin")       
   (setq dired-use-ls-dired nil))
+
+;;;; custom setup
+
+(defun my/launch-process (name buffer-name process &rest args) 
+(apply #'start-process name buffer-name process args)
+(with-current-buffer buffer-name
+        (local-set-key (kbd "C-c C-c") (lambda () (interactive) (kill-process))))
+)
 
 ;;;; line number and scroll bars
 (global-display-line-numbers-mode 1)
 ;; (setq display-line-numbers 'relative)
 (scroll-bar-mode -1)
 
-
 ;;;; alias for yes and no
 
 (defalias 'yes-or-no-p 'y-or-n-p)
 (setq echo-keystrokes 0.1)
 
-;; ;; which-key
-;; (use-package which-key
-;;   :ensure t
-;;   :config
-;;   (which-key-mode))
+;;;; which-key
+(use-package which-key
+  :ensure t
+  :config
+  (which-key-mode))
 
 ;;;; helm
 (use-package helm
@@ -73,8 +85,6 @@
 (add-to-list 'auto-mode-alist '("\\.mdown$" . markdown-mode))
 (add-to-list 'auto-mode-alist '("^\\*.org\\*$" . org-mode))
 (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
-
-(add-hook 'org-mode-hook 'org-bullets-mode)
 (add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
 
 ;;;; hydra projectile
@@ -148,8 +158,8 @@ _i_ reset cache     _K_ kill all        _D_ root            _R_ regexp replace
 	      ("C-c d" . lsp-describe-thing-at-point)
 	      ("C-c a" . lsp-execute-code-action))
   :bind-keymap ("C-c l" . lsp-command-map)
-  ;; :config
-  ;; (lsp-enable-which-key-integration t)
+  :config
+  (lsp-enable-which-key-integration t)
   )
 
 ;;;; company
@@ -199,6 +209,25 @@ _i_ reset cache     _K_ kill all        _D_ root            _R_ regexp replace
   :hook ((java-mode . lsp-deferred)
 	 (java-mode . company-mode))
   :config (add-hook 'java-mode-hook 'lsp))
+
+;;;; Dashboard
+(use-package nerd-icons)
+(use-package dashboard
+  :ensure t
+  :config
+  (dashboard-setup-startup-hook)
+  (setq dashboard-startup-banner "~/.emacs.d/fox.png")
+  (setq dashboard-banner-logo-title "Free And Impulsive")
+  (setq dashboard-center-content t)
+  (setq dashboard-items '((recents   . 5)
+                        (projects  . 5)
+                        (agenda    . 5))))
+
+;;;; ORG-Agenda
+
+(add-hook 'org-mode-hook 'org-bullets-mode)
+(setq org-agenda-files
+   (list "~/my-space/Notes/Todo.org"))
 
 (message "Hey there!")
 
