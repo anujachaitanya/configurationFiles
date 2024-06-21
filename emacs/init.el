@@ -27,6 +27,10 @@
 (set-face-attribute 'default nil :height 140)
 
 ;;;; window shortcuts
+(defun prev-window ()
+  (interactive)
+  (other-window -1))
+
 (global-set-key (kbd "C-x w") 'delete-frame)
 (global-set-key (kbd "s-<return>") 'toggle-frame-fullscreen)
 (global-set-key (kbd "s->") #'other-window)
@@ -49,8 +53,30 @@
 ;; (setq display-line-numbers 'relative)
 (scroll-bar-mode -1)
 
-;;;; alias for yes and no
+;;;; Basic text editing
 
+(defun duplicate-line()
+  (interactive)
+  (move-beginning-of-line 1)
+  (kill-line)
+  (yank)
+  (open-line 1)
+  (next-line 1)
+  (yank)
+  (pop kill-ring)
+  (move-beginning-of-line 1))
+
+(defun my/move-line (dir)
+  (interactive)
+  (next-line)
+  (transpose-lines dir)
+  (previous-line))
+
+(global-set-key (kbd "M-<up>") (lambda () (interactive) (my/move-line -1)))
+(global-set-key (kbd "M-<down>") (lambda () (interactive) (my/move-line 1))) 
+(global-set-key (kbd "C-c d") 'duplicate-line)
+
+;;;; alias for yes and no
 (defalias 'yes-or-no-p 'y-or-n-p)
 (setq echo-keystrokes 0.1)
 
@@ -151,6 +177,9 @@ _i_ reset cache     _K_ kill all        _D_ root            _R_ regexp replace
 (global-set-key (kbd "C-c g") 'magit-status)
 (global-set-key (kbd "C-c m") 'hydra-magit/body)
 
+;;;; eshell
+(global-set-key (kbd "C-`") (lambda () (interactive) (eshell 'N)))
+
 ;;;; lsp-mode
 (use-package lsp-mode
   :ensure t
@@ -210,6 +239,13 @@ _i_ reset cache     _K_ kill all        _D_ root            _R_ regexp replace
 	 (java-mode . company-mode))
   :config (add-hook 'java-mode-hook 'lsp))
 
+;;;; ORG-Agenda
+
+(add-hook 'org-mode-hook 'org-bullets-mode)
+(setq org-agenda-files
+      (list "~/my-space/Notes/Todo.org"))
+(global-set-key (kbd "C-c a") 'org-agenda)
+
 ;;;; Dashboard
 (use-package nerd-icons)
 (use-package dashboard
@@ -223,11 +259,6 @@ _i_ reset cache     _K_ kill all        _D_ root            _R_ regexp replace
                         (projects  . 5)
                         (agenda    . 5))))
 
-;;;; ORG-Agenda
-
-(add-hook 'org-mode-hook 'org-bullets-mode)
-(setq org-agenda-files
-   (list "~/my-space/Notes/Todo.org"))
 
 (message "Hey there!")
 
