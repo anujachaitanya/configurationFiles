@@ -132,4 +132,4 @@ export GOPATH="$HOME/go"
 export GO111MODULE=auto
 export  GOROOT=/usr/local/Cellar/go/1.22.1/libexec
 export PATH=$PATH:$(go env GOPATH)/bin
-
+alias k=kubectl

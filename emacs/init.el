@@ -4,6 +4,7 @@
 ;; and `package-pinned-packages`. Most users will not need or want to do this.
 ;;(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 (package-initialize)
+(package-refresh-contents)
 
 (unless (package-installed-p 'use-package)
   (package-install 'use-package))
@@ -11,8 +12,12 @@
 (use-package helm-swoop :ensure t)
 (use-package auto-complete :ensure t)
 (use-package hydra :ensure t)
+;; (use-package mode-line-bell
+;;   :ensure t
+;;   :init (mode-line-bell-mode))
 
 (setq make-backup-files nil)
+(setq desktop-buffers-not-to-save "^$")
 
 ;;;; Global setup
 
@@ -21,12 +26,16 @@
               tab-width 2
               indent-tabs-mode nil)
 
-(load-theme 'sanityinc-tomorrow-bright t)
-;; (load-theme 'darktooth t)
-(set-background-color '"gray13")
+(use-package color-theme-sanityinc-tomorrow
+  :ensure t
+  :init
+  (load-theme 'sanityinc-tomorrow-bright t)
+  (set-background-color '"gray13"))
+
 (set-face-attribute 'default nil :height 140)
 
 ;;;; window shortcuts
+
 (defun prev-window ()
   (interactive)
   (other-window -1))
@@ -49,6 +58,16 @@
 )
 
 ;;;; line number and scroll bars
+
+(defun display-line-numbers-disable-hook ()
+ "Disable display-line-numbers locally."
+ (display-line-numbers-mode 0))
+
+(add-hook 'maggit-mode-hook 'display-line-numbers-disable-hook)
+(add-hook 'dashboard-mode-hook 'display-line-numbers-disable-hook)
+
+(global-set-key (kbd "C-;") 'goto-line)
+
 (global-display-line-numbers-mode 1)
 ;; (setq display-line-numbers 'relative)
 (scroll-bar-mode -1)
@@ -77,16 +96,19 @@
 (global-set-key (kbd "C-c d") 'duplicate-line)
 
 ;;;; alias for yes and no
+
 (defalias 'yes-or-no-p 'y-or-n-p)
 (setq echo-keystrokes 0.1)
 
 ;;;; which-key
+
 (use-package which-key
   :ensure t
   :config
   (which-key-mode))
 
 ;;;; helm
+
 (use-package helm
   :ensure t
   :config
@@ -94,6 +116,7 @@
   (global-set-key (kbd "C-x b") 'helm-mini))
 
 ;;;; finder
+
 (use-package helm-projectile
   :ensure t
   :config
@@ -112,6 +135,7 @@
 (add-to-list 'auto-mode-alist '("^\\*.org\\*$" . org-mode))
 (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
 (add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
+(add-to-list 'auto-mode-alist '("\\.yaml\\'" . yaml-mode))
 
 ;;;; hydra projectile
 
@@ -178,6 +202,7 @@ _i_ reset cache     _K_ kill all        _D_ root            _R_ regexp replace
 (global-set-key (kbd "C-c m") 'hydra-magit/body)
 
 ;;;; eshell
+
 (global-set-key (kbd "C-`") (lambda () (interactive) (eshell 'N)))
 
 ;;;; lsp-mode
@@ -185,7 +210,9 @@ _i_ reset cache     _K_ kill all        _D_ root            _R_ regexp replace
   :ensure t
   :bind (:map lsp-mode-map
 	      ("C-c d" . lsp-describe-thing-at-point)
-	      ("C-c a" . lsp-execute-code-action))
+	      ("C-c a" . lsp-execute-code-action)
+        ("C-c r" . 'lsp-find-references)
+        ("C-<return>" . 'lsp-find-definition))
   :bind-keymap ("C-c l" . lsp-command-map)
   :config
   (lsp-enable-which-key-integration t)
@@ -207,7 +234,8 @@ _i_ reset cache     _K_ kill all        _D_ root            _R_ regexp replace
   (setq company-idle-delay 0.1
 	company-minimum-prefix-length 1))
 
-;;; Go
+;;;; Go
+
 (use-package go-mode
   :ensure t
   :hook ((go-mode . lsp-deferred)
@@ -236,8 +264,35 @@ _i_ reset cache     _K_ kill all        _D_ root            _R_ regexp replace
   (setq lsp-java-inhibit-message nil)
   (setq lsp-java-java-path "/usr/local/opt/openjdk@17/bin/java")
   :hook ((java-mode . lsp-deferred)
-	 (java-mode . company-mode))
+	       (java-mode . company-mode))
   :config (add-hook 'java-mode-hook 'lsp))
+
+;;;; javascript
+
+(use-package js2-mode
+  :ensure t
+  :hook(
+        (js2-mode . lsp-deferred)
+        (js2-mode . company-mode))
+  :config
+  (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+  (setq js-indent-level 2))
+
+(use-package yaml-mode
+  :ensure t
+  :hook(
+        (yaml-mode . lsp-deferred)
+        (yaml-mode . company-mode)))
+
+;; (use-package typescript-mode
+;;   :ensure t
+;;   :mode ("\\.ts\\'" "\\.js\\'") 
+;;   :hook
+;;   (typescript-mode . lsp-deferred)
+;;   (typescript-mode . company-mode)
+;;   :config
+;;   (setq typescript-indent-level 2))
+
 
 ;;;; ORG-Agenda
 
@@ -247,18 +302,32 @@ _i_ reset cache     _K_ kill all        _D_ root            _R_ regexp replace
 (global-set-key (kbd "C-c a") 'org-agenda)
 
 ;;;; Dashboard
-(use-package nerd-icons)
 (use-package dashboard
   :ensure t
   :config
   (dashboard-setup-startup-hook)
   (setq dashboard-startup-banner "~/.emacs.d/fox.png")
-  (setq dashboard-banner-logo-title "Free And Impulsive")
+  (setq dashboard-banner-logo-title "Hey there!")
   (setq dashboard-center-content t)
   (setq dashboard-items '((recents   . 5)
                         (projects  . 5)
                         (agenda    . 5))))
 
-
 (message "Hey there!")
 
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   '("c71fd8fbda070ff5462e052d8be87423e50d0f437fbc359a5c732f4a4c535c43" default))
+ '(package-selected-packages
+   '(mode-line-bell mode-line-bell-mode js2-mode dap-chrome yaml-mode which-key simple-httpd shrink-path org-bullets nerd-icons monokai-theme magit lsp-java helm-swoop helm-projectile helm-ag goto-chg go-complete git-gutter+ dashboard darktooth-theme company color-theme-sanityinc-tomorrow auto-complete)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
