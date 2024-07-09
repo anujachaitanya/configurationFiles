@@ -12,9 +12,6 @@
 (use-package helm-swoop :ensure t)
 (use-package auto-complete :ensure t)
 (use-package hydra :ensure t)
-;; (use-package mode-line-bell
-;;   :ensure t
-;;   :init (mode-line-bell-mode))
 
 (setq make-backup-files nil)
 (setq desktop-buffers-not-to-save "^$")
@@ -33,6 +30,10 @@
   (set-background-color '"gray13"))
 
 (set-face-attribute 'default nil :height 140)
+
+(use-package mode-line-bell
+  :ensure t
+  :init (mode-line-bell-mode))
 
 ;;;; window shortcuts
 
@@ -284,14 +285,14 @@ _i_ reset cache     _K_ kill all        _D_ root            _R_ regexp replace
         (yaml-mode . lsp-deferred)
         (yaml-mode . company-mode)))
 
-;; (use-package typescript-mode
-;;   :ensure t
-;;   :mode ("\\.ts\\'" "\\.js\\'") 
-;;   :hook
-;;   (typescript-mode . lsp-deferred)
-;;   (typescript-mode . company-mode)
-;;   :config
-;;   (setq typescript-indent-level 2))
+(use-package typescript-mode
+  :ensure t
+  :mode ("\\.ts\\'") 
+  :hook
+  (typescript-mode . lsp-deferred)
+  (typescript-mode . company-mode)
+  :config
+  (setq typescript-indent-level 2))
 
 
 ;;;; ORG-Agenda
@@ -316,18 +317,3 @@ _i_ reset cache     _K_ kill all        _D_ root            _R_ regexp replace
 (message "Hey there!")
 
 
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-safe-themes
-   '("c71fd8fbda070ff5462e052d8be87423e50d0f437fbc359a5c732f4a4c535c43" default))
- '(package-selected-packages
-   '(mode-line-bell mode-line-bell-mode js2-mode dap-chrome yaml-mode which-key simple-httpd shrink-path org-bullets nerd-icons monokai-theme magit lsp-java helm-swoop helm-projectile helm-ag goto-chg go-complete git-gutter+ dashboard darktooth-theme company color-theme-sanityinc-tomorrow auto-complete)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
