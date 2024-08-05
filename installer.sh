@@ -19,10 +19,15 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git .zsh/powerlevel10k
 
 ## lsp-servers for emacs
+
+# Go servers
 #  go install golang.org/x/tools/cmd/godoc@latest
 #  go install golang.org/x/tools/cmd/goimports@latest
 #  go install golang.org/x/tools/gopls@latest
 
+# typescript server
+# npm install -g typescript-language-server typescript
 source .zshrc
 
-## ssh-keygen 
+## ssh-keygen
+
