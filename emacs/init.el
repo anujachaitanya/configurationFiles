@@ -56,9 +56,9 @@
 
 (global-set-key (kbd "C-x w") 'delete-frame)
 (global-set-key (kbd "s-<return>") 'toggle-frame-fullscreen)
-(global-set-key (kbd "s-}") #'other-window)
+(global-set-key (kbd "s-]") #'other-window)
 (global-set-key (kbd "s-'") #'other-window)
-(global-set-key (kbd "s-{") #'prev-window)
+(global-set-key (kbd "s-[") #'prev-window)
 (global-set-key (kbd "C-<return>") #'delete-other-windows)
 
 
@@ -175,7 +175,7 @@
   :ensure t
   :config
   (dashboard-setup-startup-hook)
-  (setq dashboard-startup-banner "~/.emacs.d/fox.png")
+  (setq dashboard-startup-banner "~/configurationFiles/emacs/fox.png")
   (setq dashboard-banner-logo-title "Hey there!")
   (setq dashboard-center-content t)
   (setq dashboard-items '((recents   . 5)
@@ -184,5 +184,4 @@
                         (bookmarks . 5))))
 
 (message "Hey there!")
-
 
