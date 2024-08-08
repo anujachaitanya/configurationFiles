@@ -70,14 +70,12 @@
         (js2-mode . lsp-deferred)
         (js2-mode . company-mode))
   :config
-  ;; (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+  (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
   (setq js-indent-level 2))
 
 ;; (use-package yaml-mode
 ;;   :ensure t
-;;   :hook(
-;;         (yaml-mode . lsp-deferred)
-;;         (yaml-mode . company-mode)))
+
 
 (use-package typescript-mode
   :ensure t
@@ -87,3 +85,15 @@
   (typescript-mode . company-mode)
   :config
   (setq typescript-indent-level 2))
+
+;;;; yaml-mode
+
+(use-package yaml-mode
+  :ensure t
+  :init
+  (add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
+  (add-to-list 'auto-mode-alist '("\\.yaml\\'" . yaml-mode))
+  ;;   :hook(
+  ;;         (yaml-mode . lsp-deferred)
+  ;;         (yaml-mode . company-mode)))
+  )
