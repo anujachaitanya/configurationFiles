@@ -175,6 +175,7 @@
   :ensure t
   :config
   (dashboard-setup-startup-hook)
+  (setq dashboard-projects-backend 'projectile)
   (setq dashboard-startup-banner "~/configurationFiles/emacs/fox.png")
   (setq dashboard-banner-logo-title "Hey there!")
   (setq dashboard-center-content t)
