@@ -5,11 +5,13 @@ brew install --cask visual-studio-code emacs
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 git config --global user.name "anujachaitanya"
+git config --global user.email "anujachaitanya09@gmail.com"
 git clone https://github.com/anujachaitanya/configurationFiles.git 
 
 ln -s ./configurationFiles/vimrc .vimrc    
 ln -s ./configurationFiles/zshrc .zshrc
-ln -s ./configurationFiles/alacritty.yml .alacritty.yml     
+ln -s ./configurationFiles/alacritty.toml .alacritty.toml
+# ln -s ./configurationFiles/alacritty.yml .alacritty.yml     ## This is deprecated
 ln -s ./configurationFiles/tmux.conf .tmux.conf     
 cp ./configurationFiles/emacs/init.el ./.emacs.d/init.el
 
