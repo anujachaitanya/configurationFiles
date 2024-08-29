@@ -11,7 +11,7 @@ ln -s ./configurationFiles/vimrc .vimrc
 ln -s ./configurationFiles/zshrc .zshrc
 ln -s ./configurationFiles/alacritty.yml .alacritty.yml     
 ln -s ./configurationFiles/tmux.conf .tmux.conf     
-cp ./configurationFiles/emacs/init.el ./.emac.d/init.el
+cp ./configurationFiles/emacs/init.el ./.emacs.d/init.el
 
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git  ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
