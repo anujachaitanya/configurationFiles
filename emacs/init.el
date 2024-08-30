@@ -181,7 +181,7 @@
   (setq dashboard-center-content t)
   (setq dashboard-items '((recents   . 5)
                         (projects  . 5)
-                        ;; (agenda    . 5)
+                        (agenda    . 5)
                         (bookmarks . 5))))
 
 (message "Hey there!")

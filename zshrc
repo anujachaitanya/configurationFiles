@@ -132,4 +132,6 @@ export GOPATH="$HOME/go"
 export GO111MODULE=auto
 export  GOROOT=/usr/local/Cellar/go/1.22.1/libexec
 export PATH=$PATH:$(go env GOPATH)/bin
-alias k=kubectlexport PATH=/usr/local/opt/openjdk@17/bin:/Users/anujachaitanya/.rd/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/anujachaitanya/bin:/Users/anujachaitanya/Library/Application Support/Coursier/bin:/bin:/opt/homebrew/bin:/opt/homebrew/bin
+alias k=kubectl
+export PATH=/usr/local/opt/openjdk@17/bin:/Users/anujachaitanya/.rd/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/anujachaitanya/bin:/bin
+export PATH=/opt/homebrew/bin:$PATH
