@@ -30,3 +30,6 @@ export PATH="/usr/local/opt/openjdk@17/bin:$PATH"
 export PATH="/opt/homebrew/bin:$PATH"
 
 alias k=kubectl
+
+# Installed by brew
+eval "$(starship init zsh)"
