@@ -28,9 +28,11 @@ export PATH=$PATH:$(go env GOPATH)/bin
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:~/bin
 export PATH="/usr/local/opt/openjdk@17/bin:$PATH"
 export PATH="/opt/homebrew/bin:$PATH"
+export PATH="/Applications/IntelliJ IDEA.app/Contents/MacOS:$PATH"
 
 alias k=kubectl
 
 # Installed by brew
 export STARSHIP_CONFIG=~/configurationFiles/starship.toml
 eval "$(starship init zsh)"
+
