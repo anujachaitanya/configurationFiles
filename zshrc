@@ -15,14 +15,14 @@ ZSH_THEME="robbyrussell"
 
 
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
-plugins=(git z zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git z zsh-autosuggestions zsh-syntax-highlighting kubectl helm git history-substring-search)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
 export GOPATH="$HOME/go"
 export GO111MODULE=auto
-export GOROOT=/opt/homebrew/Cellar/go/1.23.0/libexec
+export GOROOT="$(brew --prefix golang)/libexec"
 export PATH=$PATH:$(go env GOPATH)/bin
 
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:~/bin
