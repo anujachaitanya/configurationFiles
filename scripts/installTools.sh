@@ -13,6 +13,7 @@ coreUtils=(
     go
     node
     tldr
+    define
 )
 
 for i in "${coreUtils[@]}"; do

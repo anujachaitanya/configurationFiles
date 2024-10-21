@@ -15,7 +15,7 @@ ZSH_THEME="robbyrussell"
 
 
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
-plugins=(git z zsh-autosuggestions zsh-syntax-highlighting kubectl helm git history-substring-search)
+plugins=(git z zsh-autosuggestions zsh-syntax-highlighting kubectl helm github history-substring-search)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
