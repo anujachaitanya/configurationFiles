@@ -5,7 +5,6 @@ coreUtils=(
     alacritty
     tmux
     tree
-    openjdk@17
     colima
     docker
     tig

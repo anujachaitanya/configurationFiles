@@ -13,5 +13,5 @@ this folder has configurations for
 
 # Run this command to install the basic things 
 ```
- sh -c "$(curl -fsSL https://raw.githubusercontent.com/anujachaitanya/configurationFiles/refs/heads/master/installer.sh)"   
- ```
+ sh -c "$(curl -fsSL https://raw.githubusercontent.com/anujachaitanya/configurationFiles/refs/heads/master/installer.sh)"
+```
