@@ -57,7 +57,7 @@
   :ensure t
   :init
   (setq lsp-java-inhibit-message nil)
-  (setq lsp-java-java-path "/usr/local/opt/openjdk@17/bin/java")
+  (setq lsp-java-java-path "/usr/bin/java")
   :hook ((java-mode . lsp-deferred)
 	       (java-mode . company-mode))
   :config (add-hook 'java-mode-hook 'lsp))

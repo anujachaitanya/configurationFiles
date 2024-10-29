@@ -26,9 +26,10 @@ export GOROOT="$(brew --prefix golang)/libexec"
 export PATH=$PATH:$(go env GOPATH)/bin
 
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:~/bin
-export PATH="/usr/local/opt/openjdk@17/bin:$PATH"
 export PATH="/opt/homebrew/bin:$PATH"
 export PATH="/Applications/IntelliJ IDEA.app/Contents/MacOS:$PATH"
+
+export JAVA_HOME=$(/usr/libexec/java_home)
 
 alias k=kubectl
 
