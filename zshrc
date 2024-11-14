@@ -37,3 +37,4 @@ alias k=kubectl
 export STARSHIP_CONFIG=~/configurationFiles/starship.toml
 eval "$(starship init zsh)"
 
+export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
