@@ -8,7 +8,7 @@ ZSH_THEME="robbyrussell"
 # zstyle ':omz:update' frequency 13
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -38,3 +38,9 @@ export STARSHIP_CONFIG=~/configurationFiles/starship.toml
 eval "$(starship init zsh)"
 
 export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
+
+alias ec="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient --create-frame -t"
+export TERM=xterm
+
+export EDITOR="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -t"
+
