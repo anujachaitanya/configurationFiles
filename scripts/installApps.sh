@@ -12,6 +12,7 @@ applications=(
   flycut
   numi
   emacs
+  kitty
 )
 
 for i in "${applications[@]}"; do

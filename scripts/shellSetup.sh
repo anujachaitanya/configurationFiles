@@ -10,8 +10,8 @@ git clone https://github.com/anujachaitanya/configurationFiles.git
 # Linking configuration files
 ln -s ./configurationFiles/vimrc .vimrc
 ln -s ./configurationFiles/zshrc .zshrc
-ln -s ./configurationFiles/alacritty.toml .alacritty.toml
-ln -s ./configurationFiles/tmux.conf .tmux.conf
+ln -s ./configurationFiles/conf/alacritty.toml .alacritty.toml
+ln -s ./configurationFiles/conf/tmux.conf .tmux.conf
 
 
 # Installing zsh plugins
