@@ -34,7 +34,7 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 alias k=kubectl
 
 # Installed by brew
-export STARSHIP_CONFIG=~/configurationFiles/starship.toml
+export STARSHIP_CONFIG=~/configurationFiles/conf/starship.toml
 eval "$(starship init zsh)"
 
 export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
