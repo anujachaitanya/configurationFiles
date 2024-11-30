@@ -3,7 +3,7 @@ export ZSH="$HOME/.oh-my-zsh"
 
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="robbyrussell"
-
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#636466'
 # Uncomment the following line to change how often to auto-update (in days).
 # zstyle ':omz:update' frequency 13
 
