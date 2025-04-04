@@ -23,7 +23,7 @@ behind = '⇣${count} '
 conflicted = '!${count} '
 
 up_to_date = '[✓](green)'
-untracked = '?${count} (orange) '
+untracked = '?${count}(teal) '
 stashed = '*${count}(white)'
 modified = '[~${count}](blue) '
 staged = '[+${count}](green) '
