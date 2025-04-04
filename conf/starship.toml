@@ -23,12 +23,12 @@ behind = '⇣${count} '
 conflicted = '!${count} '
 
 up_to_date = '[✓](green)'
-untracked = '?${count} '
-stashed = '*${count} '
+untracked = '?${count} (orange) '
+stashed = '*${count}(white)'
 modified = '[~${count}](blue) '
 staged = '[+${count}](green) '
-renamed = '>>${count} '
-deleted = '-${count} '    
+renamed = '>>${count}(yellow) '
+deleted = '-${count}(red) '    
 
 [nodejs]
 format = 'via [🤖 $version](bold green) '   
