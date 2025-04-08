@@ -24,7 +24,7 @@ conflicted = '!${count} '
 
 up_to_date = '[✓](green)'
 untracked = '?${count}(teal) '
-stashed = '*${count}(white)'
+stashed = '*${count}(white) '
 modified = '[~${count}](blue) '
 staged = '[+${count}](green) '
 renamed = '>>${count}(yellow) '
