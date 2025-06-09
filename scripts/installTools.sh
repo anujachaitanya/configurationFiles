@@ -12,6 +12,11 @@ coreUtils=(
     go
     node
     tldr
+    kubernetes-cli
+    watch
+    docker-completion
+    autojump
+    fzf
     define
 )
 
