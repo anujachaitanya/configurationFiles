@@ -29,8 +29,8 @@ export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:~/bin
 export PATH="/opt/homebrew/bin:$PATH"
 export PATH="/Applications/IntelliJ IDEA.app/Contents/MacOS:$PATH"
 
-export JAVA_HOME=$(/usr/libexec/java_home)
-
+# export JAVA_HOME=$(/usr/libexec/java_home)
+export JAVA_HOME=/Users/anujachaitanya/Library/Java/JavaVirtualMachines/temurin-11.0.27/Contents/Home
 alias k=kubectl
 
 # Installed by brew
@@ -38,9 +38,11 @@ export STARSHIP_CONFIG=~/configurationFiles/conf/starship.toml
 eval "$(starship init zsh)"
 
 export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
-
+export EDITOR="vim"
 alias ec="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient --create-frame -t"
 export TERM=xterm
 
-export EDITOR="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -t"
+alias ff="fzf --style full \
+    --preview 'fzf-preview.sh {}' --bind 'focus:transform-header:file --brief {}'"
 
+source <(fzf --zsh)

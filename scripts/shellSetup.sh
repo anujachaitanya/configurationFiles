@@ -13,6 +13,12 @@ ln -s ./configurationFiles/zshrc .zshrc
 ln -s ./configurationFiles/conf/alacritty.toml .alacritty.toml
 ln -s ./configurationFiles/conf/tmux.conf .tmux.conf
 
+# coyping kitty configuration
+mkdir -p ~/.config/kitty
+cp ./configurationFiles/conf/kitty.conf ~/.config/kitty/kitty.conf
+cp ./configurationFiles/conf/theme.conf ~/.config/kitty/theme.conf
+
+
 
 # Installing zsh plugins
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git  "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}"/plugins/zsh-syntax-highlighting

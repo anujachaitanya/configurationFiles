@@ -32,7 +32,7 @@ iabbrev iff if(){<CR>}<UP><RIGHT><RIGHT>
 iabbrev ife if(){<CR>}else{<CR>}<UP><UP><RIGHT><RIGHT>
 iabbrev fr for(;;){<CR>}<UP><RIGHT><RIGHT><RIGHT>
 iabbrev wh while(){<CR>}<UP><RIGHT><RIGHT><RIGHT><RIGHT><RIGHT>
-iabbrev ff const  = function() {<CR>};<UP><RIGHT><RIGHT><RIGHT>
+" iabbrev ff const  = function() {<CR>};<UP><RIGHT><RIGHT><RIGHT>
 
 
 
