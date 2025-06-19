@@ -3,7 +3,7 @@
 #### APPLICATIONS ####
 
 applications=(
-  arc
+  brave
   visual-studio-code
   intellij-idea
   zoom
