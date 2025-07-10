@@ -1,4 +1,5 @@
 # Path to your Oh My Zsh installation.
+
 export ZSH="$HOME/.oh-my-zsh"
 
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
@@ -32,6 +33,9 @@ export PATH="/Applications/IntelliJ IDEA.app/Contents/MacOS:$PATH"
 # export JAVA_HOME=$(/usr/libexec/java_home)
 export JAVA_HOME=/Users/anujachaitanya/Library/Java/JavaVirtualMachines/temurin-11.0.27/Contents/Home
 alias k=kubectl
+
+DISABLE_AUTO_TITLE="true"
+
 
 # Installed by brew
 export STARSHIP_CONFIG=~/configurationFiles/conf/starship.toml
