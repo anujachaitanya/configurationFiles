@@ -49,3 +49,15 @@ key_bindings:
   - { key: Comma, mods: Command, chars: "\x02," }
   - { key: S, mods: Command, chars: "\x02s" }
   - { key: W, mods: Command, chars: "\x02&" }
+
+mouse:
+  enabled: true
+  mods: Control
+
+hints:
+  enabled:
+    - hyperlinks: true
+  command:
+    program: xdg-open
+  post_processing: true
+

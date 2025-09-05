@@ -33,12 +33,15 @@ deleted = '-${count}(red) '
 [nodejs]
 format = 'via [🤖 $version](bold green) '   
 
-[kubernetes]
-format = 'on [⛵ ($user on )($cluster in )$context \($namespace\)](dimmed green) '
+[docker_context]
 disabled = false
-contexts = [
-  { context_pattern = "dev.local.cluster.k8s", style = "green", symbol = "💔 " },
-]
+only_with_files = false
+
+[kubernetes]
+disabled = false
+format = 'on [⛵ on ($cluster)](dimmed green) '
+detect_files = ["deployment.yaml", "values.yaml", "Chart.yaml"]
+detect_folders = ["charts", "etc", "helm"]
 
 [directory]
 truncation_length = 0       # Show full path with no truncation

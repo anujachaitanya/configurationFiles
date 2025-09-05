@@ -50,3 +50,6 @@ alias ff="fzf --style full \
     --preview 'fzf-preview.sh {}' --bind 'focus:transform-header:file --brief {}'"
 
 source <(fzf --zsh)
+
+alias universal-pull="git pull -r"
+alias almighty-push="git push"
