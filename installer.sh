@@ -9,8 +9,8 @@ echo "installing Apps"
 echo "setting up shell"
 ./scripts/shellSetup.sh
 
-echo "setting up emacs"
-./scripts/setupEmacs.sh
+# echo "setting up emacs"
+# ./scripts/setupEmacs.sh
 
 ## ssh-keygen
 
