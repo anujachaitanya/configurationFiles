@@ -18,6 +18,7 @@ coreUtils=(
     autojump
     fzf
     define
+    docker-compose
 )
 
 for i in "${coreUtils[@]}"; do

@@ -9,8 +9,6 @@ applications=(
   zoom
   alacritty
   1password
-  flycut
-  numi
   emacs
   kitty
 )
