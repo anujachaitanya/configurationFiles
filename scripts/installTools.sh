@@ -2,7 +2,6 @@
 
 coreUtils=(
     starship
-    alacritty
     tmux
     tree
     colima
@@ -19,6 +18,7 @@ coreUtils=(
     fzf
     define
     docker-compose
+    k9s
 )
 
 for i in "${coreUtils[@]}"; do

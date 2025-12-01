@@ -5,13 +5,17 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 # Linking configuration files
 ln -s ./configurationFiles/vimrc .vimrc
 ln -s ./configurationFiles/zshrc .zshrc
-ln -s ./configurationFiles/conf/alacritty.toml .alacritty.toml
+# ln -s ./configurationFiles/conf/alacritty.toml .alacritty.toml
 ln -s ./configurationFiles/conf/tmux.conf .tmux.conf
 
-# coyping kitty configuration
-mkdir -p ~/.config/kitty
-cp ./configurationFiles/conf/kitty.conf ~/.config/kitty/kitty.conf
+# # coyping kitty configuration
+# mkdir -p ~/.config/kitty
+# cp ./configurationFiles/conf/kitty.conf ~/.config/kitty/kitty.conf
 cp ./configurationFiles/conf/theme.conf ~/.config/kitty/theme.conf
+
+# copying ghostty configuration
+mkdir -p ~/.config/ghostty
+cp ./configurationFiles/conf/ghostty-config ~/.config/ghostty/config
 
 
 # Installing zsh plugins

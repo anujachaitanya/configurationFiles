@@ -7,10 +7,9 @@ applications=(
   visual-studio-code
   intellij-idea
   zoom
-  alacritty
   1password
   emacs
-  kitty
+  ghostty
 )
 
 for i in "${applications[@]}"; do
