@@ -1,8 +1,8 @@
-# fonts
+# fonts and style
 font-size = 14
 font-style = medium
 bold-is-bright = true
-# theme = Bright lights
+theme = Dracula+
 font-family = "JetBrainsMono Nerd Font Mono"
 
 # cursor
@@ -13,10 +13,14 @@ cursor-style-blink = false
 # clipboard
 copy-on-select = clipboard
 clipboard-trim-trailing-spaces = true
-
 # mouse
 mouse-scroll-multiplier = 2
 mouse-hide-while-typing = true
+
+# split setting
+split-divider-color = #444444
+unfocused-split-opacity = 0.4
+unfocused-split-opacity = 0.4
 
 # window
 initial-window = true
@@ -27,13 +31,14 @@ window-step-resize = false
 background-blur-radius = 15
 window-padding-balance = true
 confirm-close-surface = false
-window-padding-x = 20
-window-padding-y = 20
+window-padding-x = 15
+window-padding-y = 15
 window-padding-balance = true
+window-title-font-family = "SF Pro"
 
 # keybind
 keybind = cmd+enter=toggle_split_zoom
-keybind = ctrl+r=prompt_surface_title
+keybind = cmd+,=prompt_surface_title
 
 # behavior
 auto-update = check
