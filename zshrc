@@ -29,7 +29,7 @@ export PATH=$PATH:$(go env GOPATH)/bin
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:~/bin
 export PATH="/opt/homebrew/bin:$PATH"
 export PATH="/Applications/IntelliJ IDEA.app/Contents/MacOS:$PATH"
-
+export PATH="/Users/anujachaitanya/.local/bin:$PATH"
 # export JAVA_HOME=$(/usr/libexec/java_home)
 export JAVA_HOME=/Users/anujachaitanya/Library/Java/JavaVirtualMachines/temurin-11.0.27/Contents/Home
 alias k=kubectl
@@ -52,4 +52,6 @@ alias ff="fzf --style full \
 source <(fzf --zsh)
 
 alias universal-pull="git pull -r"
-alias almighty-push="git push"
+alias almighty-push="git pull -r && git push"
+
+fpath+=~/.zfunc; autoload -Uz compinit; compinit
