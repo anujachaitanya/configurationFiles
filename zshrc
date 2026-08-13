@@ -44,7 +44,6 @@ eval "$(starship init zsh)"
 export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
 export EDITOR="vim"
 alias ec="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient --create-frame -t"
-export TERM=xterm
 
 alias ff="fzf --style full \
     --preview 'fzf-preview.sh {}' --bind 'focus:transform-header:file --brief {}'"
