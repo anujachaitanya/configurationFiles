@@ -14,19 +14,6 @@ set shiftwidth=2              "for tab
 syntax enable                 "for colored syntax
 set textwidth=80
 
-"for characters more than 80 characters
-call matchadd("ErrorMsg", "\\%>79v.\\+",)
-
-
-"my remaps
-let mapleader = ","
-map <leader>i gg=G
-vnoremap <c-y> "*y
-imap <c-d> <esc>ddi
-imap <c-w> <esc>dwi
-imap <c-b> <esc>dbi
-" imap <c-s> <esc>:w
-
 "my shortcuts
 iabbrev iff if(){<CR>}<UP><RIGHT><RIGHT>
 iabbrev ife if(){<CR>}else{<CR>}<UP><UP><RIGHT><RIGHT>

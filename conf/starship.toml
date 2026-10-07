@@ -28,17 +28,17 @@ stashed = '*${count}(white) '
 modified = '[~${count}](blue) '
 staged = '[+${count}](green) '
 renamed = '>>${count}(yellow) '
-deleted = '-${count}(red) '    
+deleted = '-${count}(red) '
 
 [nodejs]
-format = 'via [🤖 $version](bold green) '   
+format = 'via [🤖 $version](bold green) '
 
 [docker_context]
-disabled = false
+disabled = true
 only_with_files = false
 
 [kubernetes]
-disabled = false
+disabled = true
 format = 'on [⛵ on ($cluster)](dimmed green) '
 detect_files = ["deployment.yaml", "values.yaml", "Chart.yaml"]
 detect_folders = ["charts", "etc", "helm"]
